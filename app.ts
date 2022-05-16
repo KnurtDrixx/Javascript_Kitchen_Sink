@@ -1,8 +1,8 @@
-var myName = "Joseph"; //variable for my name
+var myName: string = "Joseph"; //variable for my name
 
-const usStates = "50"; //constant for the number of united states
+const usStates: string = "50"; //constant for the number of united states
 
-let x = 4 + 5; //variable of 4+5
+let x: number = 4 + 5; //variable of 4+5
 
 function sayHello(){
     console.log("Hello World!"); //alert that says Hello World!
@@ -10,16 +10,21 @@ function sayHello(){
 
 sayHello();
 
-let person = {
+let person: IPerson = {
     name: 'Charles',
     age: 21,
 
 
 };
 
+interface IPerson {
+    name: string
+    age: number
+}
 
 
-function checkAge(name, age){
+
+function checkAge(name : string, age: number){
 
     if (age > 21){
         return("Sorry " + name + ", you are old enough");
@@ -38,7 +43,7 @@ console.log( checkAge("James", 18));
 console.log( checkAge("John",17));
 
 
-const favVeg = ["brussel sprouts", "carrots", "tomatoes"];
+const favVeg: string[] = ["brussel sprouts", "carrots", "tomatoes"];
 
 for (let i = 0; i < favVeg.length; i++){
     console.log(favVeg[i])
@@ -47,16 +52,20 @@ for (let i = 0; i < favVeg.length; i++){
 console.log("\n")
     console.log(favVeg[1])
 
-    let pet = {
+    let pet: Ipet = {
         petName: "Shadow",
         breed: "black cat",
     };
+    interface Ipet {
+        petName: string
+        breed: string
+    }
 
     console.log(pet.petName, pet.breed);
 
 
 
-const family = [
+const family: Ifamily[] = [
      {
         firstName: "Eric",
         age: 30,
@@ -74,6 +83,10 @@ const family = [
         age: 8,
     }
 ];
+interface Ifamily {
+    firstName: string;
+    age: number;
+}
 
 for (let i = 0; i < family.length; i++){
     console.log(checkAge(family[i].firstName, family[i].age))
@@ -81,7 +94,7 @@ for (let i = 0; i < family.length; i++){
 }
 
 
-const getLength = (word) => {
+const getLength = (word: string) => {
   let size =  word.length
   if ( size % 2 === 0 ){
       return 'The world is nice and even!'
